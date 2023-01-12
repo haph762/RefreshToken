@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="router-link">Refresh Token</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/customers']" routerLinkActive="router-link">Customers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" [routerLink]="['/customers']" routerLinkActive="router-link"
+                        tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <button *ngIf="!isUserAuthenticated()" class="btn btn-success" style="width: 150px;"
+                [routerLink]="['/login']" routerLinkActive="router-link">Login</button>
+
+            <button *ngIf="isUserAuthenticated()" class="btn btn-danger" style="width: 150px;"
+                (click)="logOut()">LogOut</button>
+        </div>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>
