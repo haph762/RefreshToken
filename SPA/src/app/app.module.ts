@@ -1,3 +1,4 @@
+import { NotLoggedInComponent } from './views/not-logged-in/not-logged-in.component';
 import { CustomersComponent } from './views/customers/customers.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,7 +23,8 @@ export function tokenGetter() {
     AppComponent,
     LoginComponent,
     PageNotFoundComponent,
-    CustomersComponent
+    CustomersComponent,
+    NotLoggedInComponent
   ],
   imports: [
     BrowserModule,

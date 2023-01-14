@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("jwtRefreshToken", token);
         localStorage.setItem("refreshToken", refreshToken);
         this.invalidLogin = false;
-        this.router.navigate(["/customers"]);
+        this.router.navigate(["/"]);
       },
       error: (err: HttpErrorResponse) => this.invalidLogin = true
     })

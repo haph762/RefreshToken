@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1,
+h3 {
+    line-height: 3rem;
+    cursor: default;
+}

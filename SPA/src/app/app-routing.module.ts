@@ -1,3 +1,4 @@
+import { NotLoggedInComponent } from './views/not-logged-in/not-logged-in.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { CustomersComponent } from './views/customers/customers.component';
 import { AuthGuard } from './_core/_guards/auth.guard';
@@ -22,6 +23,11 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
     title: 'login',
+  },
+  {
+    path: 'not-logged-in',
+    component: NotLoggedInComponent,
+    title: 'not-logged-in',
   },
   {
     path: '**',
