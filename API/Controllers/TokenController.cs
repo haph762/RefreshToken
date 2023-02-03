@@ -43,6 +43,7 @@ namespace API.Controllers
             var newRefreshToken = _tokenService.GenerateRefreshToken();
 
             user.RefreshToken = newRefreshToken;
+            user.RefreshTokenExpiryTime = DateTime.Now.AddMinutes(15);
             await _context.SaveChangesAsync();
 
             return Ok(new AuthenticatedResponseDto()

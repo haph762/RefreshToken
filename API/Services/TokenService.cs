@@ -24,7 +24,7 @@ namespace API.Services
                 issuer: _configuration.GetSection("JwtSettings:Issuer").Value,
                 audience: _configuration.GetSection("JwtSettings:Audience").Value,
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(1),
+                expires: DateTime.Now.AddMinutes(10),
                 signingCredentials: signInCredentials
             );
 

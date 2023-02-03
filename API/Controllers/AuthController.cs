@@ -43,7 +43,7 @@ namespace API.Controllers
             var refreshToken = _tokenService.GenerateRefreshToken();
 
             user.RefreshToken = refreshToken;
-            user.RefreshTokenExpiryTime = DateTime.Now.AddDays(7);
+            user.RefreshTokenExpiryTime = DateTime.Now.AddMinutes(15);
 
             await _context.SaveChangesAsync();
 

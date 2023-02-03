@@ -8,7 +8,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 })
 export class NotLoggedInComponent implements OnInit, OnDestroy {
 
-  timeDown: number = 9;
+  timeDown: number = 10;
   clear: NodeJS.Timer = {} as NodeJS.Timer;
   constructor(private router: Router) { }
   ngOnDestroy(): void {

@@ -39,7 +39,12 @@ export class AuthGuard implements CanActivate {
     const refreshRes = await new Promise<AuthenticatedResponse>((resolve, reject) => {
       this.tokenService.refreshToken(credentials).subscribe({
         next: (res: AuthenticatedResponse) => resolve(res),
-        error: (_) => { reject; isRefreshSuccess = false; }
+        error: (_) => {
+          reject; isRefreshSuccess = false;
+          localStorage.setItem("jwtRefreshToken", '');
+          localStorage.setItem("refreshToken", '');
+          this.router.navigate(["/not-logged-in"]);
+        }
       });
     });
 
